@@ -1,0 +1,43 @@
+---
+components:
+  parameters:
+    syncfile:
+      description: File handle
+      in: path
+      name: syncfile
+      required: true
+      schema:
+        type: string
+  schemas:
+    SyncedFile:
+      properties:
+        content:
+          description: File content (bytestring)
+          type: string
+        filename:
+          description: Default filename
+          type: string
+        handle:
+          description: File's unique handle
+          type: string
+      required:
+      - handle
+      - content
+      type: object
+info:
+  contact:
+    email: pwp-course@lists.oulu.fi
+    name: PWP Staff List
+    url: http://totally.not.placehold.er/
+  description: |
+    This is an API used for a client exercise in the Programmable Web Project course.
+    It stores small files with timestamps for synchronizing them between API and client.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://totally.not.placehold.er/
+  title: FileSync Exercise API
+  version: 1.0.0
+openapi: 3.0.4
+servers:
+- url: /api
